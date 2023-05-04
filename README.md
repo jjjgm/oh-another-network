@@ -17,6 +17,8 @@ This assignment is intended to create an API for social network web application.
 
 ## Usage
 
+The following API will be used in RESTful API tests to manipulate creating, reading, updating, and deleting all objects that will be stored in the MongoDB database.
+
 ## License
 
 MIT License
