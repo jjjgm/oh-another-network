@@ -13,7 +13,8 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             required: true,
-            validate: () => Promise.reject(new Error('Invalid Email input. Please enter a valid email address.'))
+            match: /^\S+@\S+\.\S+$/,
+            // validate: () => Promise.reject(new Error('Invalid Email input. Please enter a valid email address.'))
         },
         thoughts: [
             {
@@ -54,17 +55,18 @@ userSchema
 const User = model('User', userSchema);
 
 
-// USER EMAIL VALIDATE
-//MAY NEED TO PLACE THIS ELSEWHERE, POSS. CONTROLLERS
-const user = new User();
-user.email = 'test@example.com';
-let error;
-try {
-    await user.validate();
-} catch (err) {
-    error = err;
-}
-assert.equal(error.errors['email'].message, 'Email validation failed');
+// // USER EMAIL VALIDATE
+// //MAY NEED TO PLACE THIS ELSEWHERE, POSS. CONTROLLERS
+// const user = new User();
+// user.username = 'username';
+// user.email = 'test@example.com';
+// let error;
+// try {
+//     user.validate();
+// } catch (err) {
+//     error = err;
+// }
+
 
 
 // EXPORT USER
