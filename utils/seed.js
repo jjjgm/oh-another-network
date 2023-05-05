@@ -14,12 +14,12 @@ connection.once('open', async () => {
     // await Thought.Response.deleteMany({});
 
     const users = [];
-    const thoughts = getThoughtInfo;
+    const thoughts = getThoughtInfo(5);
     
     for (let i = 0; i < 15; i++) {
-        const friendName = getUserInfo();
-        const username = friendName.split(' ')[0];
-        const email = '/^\S+@\S+\.\S+$/';
+        const friendName = this.username;
+        const username = username;
+        const email = /^\S+@\S+\.\S+$/;
     // for (let i = 0; i < users.length; i++) {
     //     const friendName = getUserInfo;
 

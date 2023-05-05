@@ -1,0 +1,15 @@
+const userData =
+[
+    {username: 'adminAccount', email: 'example@admin.com'},
+    {username: 'aModerator99', email: 'moderator@example.com'}
+];
+
+const thoughtData = [
+    {thoughtText:'Hello Social World. Welcome!', username:`${this.username}`},
+    {thoughtText:'Being a mod is fun!', username:`${this.username}`}
+];
+
+const reactionData = [
+    { reactionBody: 'Like', username:`${this.username}`, thoughtId:`${this.thought.id}`},
+    { reactionBody: 'WOW! Love', username:`${this.username}`, thoughtId:`${this.thought.id}`}
+]

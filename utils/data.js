@@ -3,17 +3,22 @@ const username = [
     'moderator',
 ]
 
-const thoughtBodies =[
+// const email = [
+//     'example@example.com',
+//     'moderator@example.com'
+// ]
+
+const exampleThoughts =[
     'Hello, world',
     'Welcome, world',
 ]
 
 const exampleReactions = [
     'Like',
-    'Dislike',
     'Thanks for sharing your thought',
-    'Please explain further',
 ]
+
+
 
 const users = [];
 
@@ -26,7 +31,7 @@ const getThoughtInfo = (int) => {
     let result = [];
     for (let i = 0; i < int; i++) {
         result.push({
-            thoughtText: getArrItem(thoughtBodies),
+            thoughtText: getArrItem(exampleThoughts),
             createdAt: Math.random() < 0.5,
             username: getUserInfo(),
             reactions: [...getReaction(5)],
@@ -43,7 +48,7 @@ const getReaction = (int) => {
     let result = [];
     for (let i = 0; i < int; i++) {
         result.push({
-            reactionBody: getRandomArrItem(exampleReactions),
+            reactionBody: getArrItem(exampleReactions),
             username: getUserInfo(),
         });
     }

@@ -14,7 +14,7 @@ const userSchema = new Schema(
             unique: true,
             required: true,
             match: /^\S+@\S+\.\S+$/,
-            // validate: () => Promise.reject(new Error('Invalid Email input. Please enter a valid email address.'))
+            validate: () => Promise.reject(new Error('Invalid Email input. Please enter a valid email address.'))
         },
         thoughts: [
             {
@@ -51,7 +51,7 @@ userSchema
         this.set({ friendName });
     });
 
-    //NAMES MODEL: 'User' IN userSchema (FOR EXTERNAL REFERENCE)
+//NAMES MODEL: 'User' IN userSchema (FOR EXTERNAL REFERENCE)
 const User = model('User', userSchema);
 
 
@@ -66,7 +66,6 @@ const User = model('User', userSchema);
 // } catch (err) {
 //     error = err;
 // }
-
 
 
 // EXPORT USER
