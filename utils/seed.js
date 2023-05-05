@@ -17,9 +17,10 @@ connection.once('open', async () => {
     const thoughts = getThoughtInfo(5);
     
     for (let i = 0; i < 15; i++) {
-        const friendName = this.username;
-        const username = username;
+        const friendName = getUserInfo();
+        const username = getUserInfo();
         const email = /^\S+@\S+\.\S+$/;
+
     // for (let i = 0; i < users.length; i++) {
     //     const friendName = getUserInfo;
 

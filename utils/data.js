@@ -3,10 +3,10 @@ const username = [
     'moderator',
 ]
 
-// const email = [
-//     'example@example.com',
-//     'moderator@example.com'
-// ]
+const email = [
+    'example@example.com',
+    'moderator@example.com'
+]
 
 const exampleThoughts =[
     'Hello, world',
