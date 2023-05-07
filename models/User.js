@@ -13,7 +13,7 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             required: true,
-            match: /^\S+@\S+\.\S+$/,
+            match: [/^\S+@\S+\.\S+$/],
             validate: () => Promise.reject(new Error('Invalid Email input. Please enter a valid email address.'))
         },
         thoughts: [

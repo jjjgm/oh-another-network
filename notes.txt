@@ -13,3 +13,91 @@ const reactionData = [
     { reactionBody: 'Like', username:`${this.username}`, thoughtId:`${this.thought.id}`},
     { reactionBody: 'WOW! Love', username:`${this.username}`, thoughtId:`${this.thought.id}`}
 ]
+
+
+const exampleUser =[
+{ username: 'admin', email: 'admin@example.com', thoughts: [], friends: [] },
+{ username: 'moderator', email: 'moderator@example.com'},
+{ username: 'fancyUsername56', email: '56email@email.go'}, ];
+
+// const username = [
+//     'admin',
+//     'moderator',
+// ]
+
+// const email = [
+//     'example@example.com',
+//     'moderator@example.com'
+// ]
+
+const exampleThoughts =[
+    'Hello, world',
+    'Welcome to our social media web app',
+]
+
+const exampleReactions = [
+    'Like',
+    'Thanks for sharing your thought',
+    'Unsure',
+]
+
+
+
+const users = [];
+
+const getArrayItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+
+function getUserInfo() {
+    return `${getArrayItem(exampleUser.username)}`;
+}
+
+const getThoughtInfo = (int) => {
+    let result = [];
+    for (let i = 0; i < int; i++) {
+        result.push({
+            thoughtText: getArrayItem(exampleThoughts),
+            createdAt: Math.random() < 0.5,
+            username: getUserInfo(),
+            reactions: [...getReaction(5)],
+        });
+    }
+    return result;
+};
+
+// Reactions that will be returned w/ each thought
+const getReaction = (int) => {
+    if (int === 1) {
+        return getArrayItem(exampleReactions);
+    }
+    let result = [];
+    for (let i = 0; i < int; i++) {
+        result.push({
+            reactionBody: getArrayItem(exampleReactions),
+            username: getUserInfo(),
+        });
+    }
+    return result;
+};
+
+// Export the functions for use in seed.js
+module.exports = { getReaction, getThoughtInfo, getUserInfo, };
+
+
+
+
+
+for (let i = 0; i < 15; i++) {
+    //     const friendName = getUserInfo();
+    //     const username = getUserInfo();
+    //     const email = [];
+
+    const getUserInfo = (int) => {
+    let result = [];
+    for (let i = 0; i < int; i++) {
+        result.push({
+            username: getArrayItem(exampleThoughts),
+        });
+    }
+    return result;
+};

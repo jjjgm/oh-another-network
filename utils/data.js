@@ -1,38 +1,50 @@
-const username = [
-    'admin',
-    'moderator',
-]
+const exampleUser =[
+{ username: 'admin', email: 'admin@example.com', thoughts: [], friends: [] },
+{ username: 'moderator', email: 'moderator@example.com'},
+{ username: 'fancyUsername56', email: '56email@email.go'}, ];
 
-const email = [
-    'example@example.com',
-    'moderator@example.com'
-]
+// const username = [
+//     'admin',
+//     'moderator',
+// ]
+
+// const email = [
+//     'example@example.com',
+//     'moderator@example.com'
+// ]
 
 const exampleThoughts =[
     'Hello, world',
-    'Welcome, world',
+    'Welcome to our social media web app',
 ]
 
 const exampleReactions = [
     'Like',
     'Thanks for sharing your thought',
+    'Unsure',
 ]
 
 
 
 const users = [];
 
-const getArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const getArrayItem = (arr) => arr;
 
-const getUserInfo = () =>
-    `${getArrItem(username)}`;
+
+function getUserInfo() {
+    return getArrayItem(exampleUser);
+}
+
+function getUserEmail() {
+    return getArrayItem(exampleUser);
+}
 
 const getThoughtInfo = (int) => {
     let result = [];
     for (let i = 0; i < int; i++) {
         result.push({
-            thoughtText: getArrItem(exampleThoughts),
-            createdAt: Math.random() < 0.5,
+            thoughtText: getArrayItem(exampleThoughts),
+            // createdAt: Math.random() < 0.5,
             username: getUserInfo(),
             reactions: [...getReaction(5)],
         });
@@ -40,15 +52,15 @@ const getThoughtInfo = (int) => {
     return result;
 };
 
-// Create the responses that will be added to each video
+// Reactions that will be returned w/ each thought
 const getReaction = (int) => {
     if (int === 1) {
-        return getArrItem(exampleReactions);
+        return getArrayItem(exampleReactions);
     }
     let result = [];
     for (let i = 0; i < int; i++) {
         result.push({
-            reactionBody: getArrItem(exampleReactions),
+            reactionBody: getArrayItem(exampleReactions),
             username: getUserInfo(),
         });
     }
@@ -56,4 +68,4 @@ const getReaction = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getReaction, getThoughtInfo, getUserInfo, };
+module.exports = { getReaction, getThoughtInfo, getUserInfo, getUserEmail};
