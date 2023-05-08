@@ -24,8 +24,6 @@ const exampleReactions = [
     'Unsure',
 ]
 
-
-
 const users = [];
 
 const getArrayItem = (arr) => arr;
