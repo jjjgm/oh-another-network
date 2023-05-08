@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Thought = require('../models/Thought');
 
 module.exports = {
     getUser(req, res) {
@@ -11,7 +12,7 @@ module.exports = {
     getSingleUser(req, res) {
         User.findOne({ _id: req.params.userId })
             .then((user) =>
-                !thought
+                !user
                     ? res.status(404).json({ message: 'No user was found with that Id' })
                     : res.json(user)
             )
