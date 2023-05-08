@@ -1,6 +1,6 @@
 const { connection, connect } = require('mongoose');
 
-connect('mongodb://localhost/thoughtsAndReactions', {
+connect('mongodb://127.0.0.1:27017/networkDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

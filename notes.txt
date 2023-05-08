@@ -1,38 +1,15 @@
-const userData =
-[
-    {username: 'adminAccount', email: 'example@admin.com'},
-    {username: 'aModerator99', email: 'moderator@example.com'}
-];
-
-const thoughtData = [
-    {thoughtText:'Hello Social World. Welcome!', username:`${this.username}`},
-    {thoughtText:'Being a mod is fun!', username:`${this.username}`}
-];
-
-const reactionData = [
-    { reactionBody: 'Like', username:`${this.username}`, thoughtId:`${this.thought.id}`},
-    { reactionBody: 'WOW! Love', username:`${this.username}`, thoughtId:`${this.thought.id}`}
-]
-
-
+data
 const exampleUser =[
-{ username: 'admin', email: 'admin@example.com', thoughts: [], friends: [] },
+{ username: 'admin', email: 'admin@example.com'},
 { username: 'moderator', email: 'moderator@example.com'},
 { username: 'fancyUsername56', email: '56email@email.go'}, ];
 
-// const username = [
-//     'admin',
-//     'moderator',
-// ]
 
-// const email = [
-//     'example@example.com',
-//     'moderator@example.com'
-// ]
 
 const exampleThoughts =[
     'Hello, world',
     'Welcome to our social media web app',
+    'This is a thought-- I wonder what would happen if I ate more candy today?'
 ]
 
 const exampleReactions = [
@@ -42,14 +19,15 @@ const exampleReactions = [
 ]
 
 
-
-const users = [];
-
-const getArrayItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const getArrayItem = (arr) => arr;
 
 
-function getUserInfo() {
-    return `${getArrayItem(exampleUser.username)}`;
+function getUsername() {
+    return getArrayItem(exampleUser);
+}
+
+function getUserEmail() {
+    return getArrayItem(exampleUser);
 }
 
 const getThoughtInfo = (int) => {
@@ -57,9 +35,9 @@ const getThoughtInfo = (int) => {
     for (let i = 0; i < int; i++) {
         result.push({
             thoughtText: getArrayItem(exampleThoughts),
-            createdAt: Math.random() < 0.5,
-            username: getUserInfo(),
-            reactions: [...getReaction(5)],
+            // createdAt: Math.random() < 0.5,
+            username: getUsername(),
+            reactions: [...getReaction(1)],
         });
     }
     return result;
@@ -74,30 +52,49 @@ const getReaction = (int) => {
     for (let i = 0; i < int; i++) {
         result.push({
             reactionBody: getArrayItem(exampleReactions),
-            username: getUserInfo(),
+            username: getUsername(),
         });
     }
     return result;
 };
 
 // Export the functions for use in seed.js
-module.exports = { getReaction, getThoughtInfo, getUserInfo, };
+module.exports = { getReaction, getThoughtInfo, getUsername, getUserEmail };
+
+seed:
 
 
+const connection = require('../config/connection');
+const User = require('../models/User');
+const Thought = require('../models/Thought');
+const Reaction = require('../models/Reaction');
+const { getUsername, getThoughtInfo, getReaction, getUserEmail } = require('./data');
 
+connection.on('error', (err) => err);
 
+connection.once('open', async () => {
+    console.log('connection established');
 
-for (let i = 0; i < 15; i++) {
-    //     const friendName = getUserInfo();
-    //     const username = getUserInfo();
-    //     const email = [];
+    await User.deleteMany({});
+    await Thought.deleteMany({});
+    // await Thought.Response.deleteMany({});
 
-    const getUserInfo = (int) => {
-    let result = [];
-    for (let i = 0; i < int; i++) {
-        result.push({
-            username: getArrayItem(exampleThoughts),
-        });
+    const users = [];
+    const thoughts = getThoughtInfo(5);
+    console.log(getUsername())
+
+    for (let i = 0; i < getUsername().length; i++) {
+        const username = getUsername()[i].username;
+        const email = getUserEmail()[i].email;
+        users.push({ username, email });
     }
-    return result;
-};
+
+    
+    await User.collection.insertMany(users);
+    await Thought.collection.insertMany(thoughts);
+    console.table(users);
+    console.table(thoughts);
+    console.info('Seeding was successful');
+    process.exit(0);
+});
+

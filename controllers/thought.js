@@ -1,4 +1,4 @@
-const { Thought, Reaction } = require('../models/');
+const { Thought, Reaction } = require('../models');
 //may need to import/require User to link thought to User
 
 module.exports = {
