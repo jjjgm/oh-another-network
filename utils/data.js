@@ -1,17 +1,9 @@
 const exampleUser =[
-{ username: 'admin', email: 'admin@example.com', thoughts: [], friends: [] },
+{ username: 'admin', email: 'admin@example.com'},
 { username: 'moderator', email: 'moderator@example.com'},
 { username: 'fancyUsername56', email: '56email@email.go'}, ];
 
-// const username = [
-//     'admin',
-//     'moderator',
-// ]
 
-// const email = [
-//     'example@example.com',
-//     'moderator@example.com'
-// ]
 
 const exampleThoughts =[
     'Hello, world',
