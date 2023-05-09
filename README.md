@@ -5,6 +5,7 @@ Building an API for for a social network web based app using Express.js and Mong
 ## Description
 
 This assignment is intended to create an API for social network web application.
+We are able to create new user friendship relationships between users,  newthoughts and reactions, as well as relationships with object ids, and delete the corresponding thoughts with their respective reactions through the REST API.
 
 ## Install
 
@@ -28,8 +29,16 @@ MIT License
 
 [Mongoose Schema Types](https://mongoosejs.com/docs/schematypes.html)
 
+Phillip Loy - Help with Seeding (previous commit on Sunday 5/7-- now deleted on previous version.)
+
+Roye Bustan - Assisted with 200! console log input on previous commits
+
 ## Tests
 
-[Walkthrough Video]()
+[Walkthrough Video](https://drive.google.com/file/d/1fsfDAKBSslb2HUaxTt9kWPJt-rwsTXl0/view)
 
 ## Assets
+[!thoughts](./assets/Screenshot%202023-05-09%20at%202.17.48%20AM.png)
+[!friends](./assets/Screenshot%202023-05-09%20at%202.18.06%20AM.png)
+[!thought with reaction](./assets/Screenshot%202023-05-09%20at%202.18.18%20AM.png)
+[!reactions](./assets/Screenshot%202023-05-09%20at%202.18.29%20AM.png)

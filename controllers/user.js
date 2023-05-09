@@ -64,7 +64,7 @@ module.exports = {
                     : res.json(user)
             )
             .catch((err) => res.status(500).json(err));
-            console.log('unable to create friendship')
+            console.log('Sweet! You have created a new friend instance.')
     },
 
     // deleteFriendship
@@ -80,7 +80,7 @@ module.exports = {
                     : res.json(user)
             )
             .catch((err) => res.status(500).json(err));
-            console.log('Unable to delete friendship')
+            console.log('Friendship: TERMINATED!')
     }
 
 }

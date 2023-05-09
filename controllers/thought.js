@@ -32,7 +32,7 @@ module.exports = {
             })
             .then((thoughts) => res.status(200).json(thoughts))
             .catch((err) => res.status(500).json(err));
-            console.log('Unable to create thought')
+            console.log('Sucessfully created a new thought')
     },
     // updateThought
     updateThought(req, res) {
@@ -47,7 +47,7 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
-            console.log('Unable to update thought')
+            
     },
 
     // deleteThought
@@ -64,7 +64,7 @@ module.exports = {
             )
             .then(() => res.json({ message: 'Your thought deleted!' }))
             .catch((err) => res.status(500).json(err));
-            console.log('Unable to delete thought')
+            
     },
 
     // createReaction
