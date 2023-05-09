@@ -38,7 +38,7 @@ Roye Bustan - Assisted with 200! console log input on previous commits
 [Walkthrough Video](https://drive.google.com/file/d/1fsfDAKBSslb2HUaxTt9kWPJt-rwsTXl0/view)
 
 ## Assets
-[!thoughts](./assets/Screenshot%202023-05-09%20at%202.17.48%20AM.png)
-[!friends](./assets/Screenshot%202023-05-09%20at%202.18.06%20AM.png)
-[!thought with reaction](./assets/Screenshot%202023-05-09%20at%202.18.18%20AM.png)
-[!reactions](./assets/Screenshot%202023-05-09%20at%202.18.29%20AM.png)
+![thoughts](./assets/Screenshot%202023-05-09%20at%202.17.48%20AM.png)
+![friends](./assets/Screenshot%202023-05-09%20at%202.18.06%20AM.png)
+![thought with reaction](./assets/Screenshot%202023-05-09%20at%202.18.18%20AM.png)
+![reactions](./assets/Screenshot%202023-05-09%20at%202.18.29%20AM.png)
