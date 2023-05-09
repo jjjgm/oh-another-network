@@ -18,7 +18,6 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
-            console.log('Unable to get single thought')
     },
 
     // createThought
@@ -81,7 +80,7 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
-            console.log('Unable to create reaction')
+            console.log('Reaction created')
     },
 
     // deleteReaction
@@ -97,6 +96,6 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
-            console.log('Unable to delete reaction')
+            console.log('Reaction Succesfilly DELETED')
     }
 }

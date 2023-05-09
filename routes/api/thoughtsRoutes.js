@@ -6,13 +6,11 @@ const {
     createThought,
     updateThought,
     deleteThought,
-} = require ('../../controllers/thought');
-
-//REACTION SPECIFIC
-const {
+    //REACTION SPECIFIC
     createReaction,
     deleteReaction
-} = require ('../../controllers/thought')
+} = require ('../../controllers/thought');
+
 
 // ROUTES THESE (get & post) TO /api/thoughts
 router.route('/').get(getThought).post(createThought);
@@ -29,6 +27,6 @@ router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(dele
 // POST  REACTION (w/ SINGLE THOUGHTS ARRAY FIELD)
 // DELETE REACTION  
 
-router.route('/thoughts/:thoughtId/reactions').post(createReaction).delete(deleteReaction);
+router.route('/:thoughtId/reactions').post(createReaction).delete(deleteReaction);
 
 module.exports = router;
