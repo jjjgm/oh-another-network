@@ -45,7 +45,7 @@ module.exports = {
             .then((user) =>
                 !user
                     ? res.status(404).json({ message: 'No user was found with that Id' })
-                    : Thoughts.deleteMany({ _id: { $in: user.thoughts } })
+                    : Thought.deleteMany({ _id: { $in: user.thoughts } })
             )
             .then(() => res.json({ message: 'User and their thoughts were succesfully deleted' }))
             .catch((err) => res.status(500).json(err));
@@ -79,6 +79,7 @@ module.exports = {
                     : res.json(user)
             )
             .catch((err) => res.status(500).json(err));
+            console.log('Unable to delete friendship')
     }
 
 }

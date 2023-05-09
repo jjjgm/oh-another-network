@@ -18,6 +18,7 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
+            console.log('Unable to get single thought')
     },
 
     // createThought
@@ -32,6 +33,7 @@ module.exports = {
             })
             .then((thoughts) => res.status(200).json(thoughts))
             .catch((err) => res.status(500).json(err));
+            console.log('Unable to create thought')
     },
     // updateThought
     updateThought(req, res) {
@@ -46,6 +48,7 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
+            console.log('Unable to update thought')
     },
 
     // deleteThought
@@ -54,7 +57,7 @@ module.exports = {
             .then((thought) =>
                 !thought
                     ? res.status(404).json({ message: 'No thought was found with that Id' })
-                    : User.findOneAndUpdate(
+                    : Thought.findOneAndUpdate(
                         { thoughts: req.params.thoughtId },
                         { $pull: { thoughts: req.params.thoughtId } },
                         { new: true }
@@ -62,6 +65,7 @@ module.exports = {
             )
             .then(() => res.json({ message: 'Your thought deleted!' }))
             .catch((err) => res.status(500).json(err));
+            console.log('Unable to delete thought')
     },
 
     // createReaction
@@ -77,6 +81,7 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
+            console.log('Unable to create reaction')
     },
 
     // deleteReaction
@@ -92,5 +97,6 @@ module.exports = {
                     : res.json(thought)
             )
             .catch((err) => res.status(500).json(err));
+            console.log('Unable to delete reaction')
     }
 }
